@@ -1,0 +1,2 @@
+# candyMachine
+Project about AFD
