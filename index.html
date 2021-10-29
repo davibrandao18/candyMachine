@@ -11,30 +11,37 @@
 </head>
 
 <body>
-    <table>
-        <tr>
-            <th>Doce A</th>
-            <td>
-                <button>Comprar</button>
-            </td>
-        </tr>
-        <tr>
-            <th>Doce B</th>
-            <td>
-                <button>Buy</button>
-            </td>
-        </tr>
-        <tr>
-            <th>Doce C</th>
-            <td>
-                <button>Buy</button>
-            </td>
-        </tr>
-    </table>
-    <form>
-        <Label>Put your money</Label>
-        <input type="number">
-    </form>
+    <div class="machine">
+        <div class="left">
+            <ul class="candies-view">
+                <li class="candy-a">A</li>
+                <li class="candy-a">A</li>
+                <li class="candy-a">A</li>
+                <li class="candy-b">B</li>
+                <li class="candy-b">B</li>
+                <li class="candy-b">B</li>
+                <li class="candy-c">C</li>
+                <li class="candy-c">C</li>
+                <li class="candy-c">C</li>
+            </ul>
+            <div class="candies-out">
+                <p class="candy-final">X</p>
+            </div>
+        </div>
+        <div class="right">
+            <p class="value">TOTAL: R$ 0,00</p>
+            <p class="value">TROCO: R$ 0,00</p>
+            <button class="cash">R$ 1,00</button>
+            <button class="cash">R$ 2,00</button>
+            <button class="cash">R$ 5,00</button>
+            <div class="options">
+                <button class="candy-a button-a" disabled>A</button>
+                <button class="candy-b button-b" disabled>B</button>
+                <button class="candy-c button-c" disabled>C</button>
+            </div>
+            <p class="name">Candy<br>Machine</p>
+        </div>
+    </div>
 </body>
 
 </html>

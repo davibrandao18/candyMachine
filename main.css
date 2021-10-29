@@ -1,7 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 table {
     border: 1px solid black;
     padding: 10px;
 }
+
 table, th {
     padding: 10px;
+}
+
+.machine {
+    margin: 10px 400px;
+    padding: 20px 0;
+    border-radius: 10px;
+    background-color: #96211E;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.left {
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.candies-view {
+    background-color: #F9F9F9;
+    height: 425px;
+    border-radius: 6px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-evenly;
+}
+
+.candies-view li {
+    list-style: none;
+    width: 75px;
+    height: 75px;
+    margin: 0 10px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.candy-a {
+    background-color: #12CEFA;
+}
+
+.candy-b {
+    background-color: #FFA500;
+}
+
+.candy-c {
+    background-color: #DDA0DD;
+}
+
+.candies-out {
+    background-color: #F9F9F9;
+    min-height: 150px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candy-final {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    width: 175px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.value {
+    padding: 20px;
+    margin: 0;
+    background-color:#F9F9F9;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.cash {
+    padding: 20px;
+    background-color:#228B22;
+    color: #F9F9F9;
+    font-size: 18px;
+    border-radius: 6px;
+    border: none;
+}
+
+.cash:active {
+    background-color:#4EA24E;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options button {
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+}
+
+.name {
+    height: 160px;
+    color: #F9F9F9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    text-align: center;
+}
+
+.button-a:active {
+    background-color: #A9D7FD;
+}
+
+.button-b:active {
+    background-color: #FABF53;
+}
+
+.button-c:active {
+    background-color:#E8BFD8;
 }
