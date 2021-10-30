@@ -49,9 +49,16 @@ table, th {
     margin: 0 10px;
     border-radius: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 18px;
+}
+
+.candies-view span {
+    padding: 2px;
+    font-size: 12px;
+    color: #000;
 }
 
 .candy-a {

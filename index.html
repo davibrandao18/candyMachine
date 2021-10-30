@@ -14,30 +14,30 @@
     <div class="machine">
         <div class="left">
             <ul class="candies-view">
-                <li class="candy-a">A</li>
-                <li class="candy-a">A</li>
-                <li class="candy-a">A</li>
-                <li class="candy-b">B</li>
-                <li class="candy-b">B</li>
-                <li class="candy-b">B</li>
-                <li class="candy-c">C</li>
-                <li class="candy-c">C</li>
-                <li class="candy-c">C</li>
+                <li class="candy-a">A<span>R$ 6,00</span></li>
+                <li class="candy-a">A<span>R$ 6,00</span></li>
+                <li class="candy-a">A<span>R$ 6,00</span></li>
+                <li class="candy-b">B<span>R$ 7,00</span></li>
+                <li class="candy-b">B<span>R$ 7,00</span></li>
+                <li class="candy-b">B<span>R$ 7,00</span></li>
+                <li class="candy-c">C<span>R$ 8,00</span></li>
+                <li class="candy-c">C<span>R$ 8,00</span></li>
+                <li class="candy-c">C<span>R$ 8,00</span></li>
             </ul>
             <div class="candies-out">
                 <p class="candy-final">X</p>
             </div>
         </div>
         <div class="right">
-            <p class="value">TOTAL: R$ 0,00</p>
+            <p id="total" class="value">TOTAL: R$ 0,00</p>
             <p class="value">TROCO: R$ 0,00</p>
-            <button class="cash">R$ 1,00</button>
-            <button class="cash">R$ 2,00</button>
-            <button class="cash">R$ 5,00</button>
+            <button class="cash" onclick="main(1)">R$ 1,00</button>
+            <button class="cash" onclick="main(2)">R$ 2,00</button>
+            <button class="cash" onclick="main(5)">R$ 5,00</button>
             <div class="options">
-                <button class="candy-a button-a" disabled>A</button>
-                <button class="candy-b button-b" disabled>B</button>
-                <button class="candy-c button-c" disabled>C</button>
+                <button id="btnA" class="candy-a button-a" onclick="main('A')" disabled>A</button>
+                <button id="btnB" class="candy-b button-b" onclick="main('B')" disabled>B</button>
+                <button id="btnC" class="candy-c button-c" onclick="main('C')" disabled>C</button>
             </div>
             <p class="name">Candy<br>Machine</p>
         </div>
