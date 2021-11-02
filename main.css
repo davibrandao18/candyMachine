@@ -116,9 +116,11 @@ table, th {
     border-radius: 6px;
     border: none;
 }
-
+.cash:disabled{
+    background-color:#a6bda6;
+}
 .cash:active {
-    background-color:#4EA24E;
+    background-color:#a6bda6;
 }
 
 .options {
