@@ -1,7 +1,9 @@
 let entrada = "";
-let palavra = ['5','5','C'];
+//let palavra = ['5','5','B'];
+let palavra = [];
 const finais = [11,12,21,22,31,32];
 let estadoInicial = 0;
+let resultEstado =-1;
 let total = 0;
 let troco = 0;
 let buttonsActive = [];
@@ -19,21 +21,25 @@ const matriz = [
     [-1, 9,9,9, 12,22,32]
 ]
 
-console.log("Resultado",transicao(palavra));
+//console.log("Resultado",transicao(palavra));
 function main(entrada) {
     palavra = [...palavra,entrada];
-    transicao(palavra);
+    calcTotal(entrada);
+    resultEstado = transicao(palavra);
+    finais.includes(resultEstado)? calcTroco(resultEstado, total) : false;
 }
 
 function transicao(palavra) {
     let estado = estadoInicial;
-    palavra.map(position => {
-        position = !isNaN(position)? parseInt(position) : convert(position);
-        console.log(`Position: ${position}`);
-        estado = position === 5? matriz[estado][3] : matriz[estado][position];
+    palavra.map(simbolo => {
+        let position = !isNaN(simbolo)? parseInt(simbolo) : convertToNumber(simbolo);
+        //console.log(`Position: ${position}`);
+        //console.log(`Simbolo: ${simbolo}`);
+        estado = (position === 5 && !isNaN(simbolo))? matriz[estado][3] : matriz[estado][position];
+        //console.log(`matriz [${estado}][${position}]  = ${estado}`);
     });
-    console.log(`Estado: ${estado}`)
-    return finais.includes(estado);
+    //console.log(`Estado: ${estado}`)
+    return estado;
 }
 
 function enableButton(total) {
@@ -61,7 +67,7 @@ function disableButtons(){
     document.getElementById("cash5").disabled = true;
 }
 
-function convert(position){
+function convertToNumber(position){
     switch(position){
         case 'A':
             return 4
@@ -72,15 +78,34 @@ function convert(position){
     }
 }
 
-function troco(entrada){
-    switch (entrada){
-        case'A':
+function convertToCandy(numberCandy){
+    switch(numberCandy){
+        case 11:
+            return 'A'
+        case 12:
+            return 'A'
+        case 21:
+            return 'B'
+        case 22:
+            return 'B'
+        case 31:
+            return 'C'
+        case 32:
+            return 'C'
+    }
+}
+
+function calcTroco(resultEstado, total){
+    let candy = convertToCandy(resultEstado);
+    console.log(candy)
+    switch (candy){
+        case ('A'):
             troco = total - 6;
             break;
-        case'B':
+        case ('B'):
             troco = total - 7;
              break;
-        case'C':
+        case ('C'):
             troco = total - 8;
             break;
         default:
@@ -88,17 +113,16 @@ function troco(entrada){
         }
     document.getElementById("troco").innerHTML = `TROCO: R$ ${troco},00`;
     document.getElementById("troco").style.backgroundColor = `rgb(152, 243, 116)`;
-    document.getElementById("candy").innerHTML = `${entrada}`;
+    document.getElementById("candy").innerHTML = `${candy}`;
     document.getElementById("candy").style.backgroundColor = `rgb(152, 243, 116)`;
 }
 
-function total(entrada){
+function calcTotal(entrada){
     if (!isNaN(entrada)) {
         total += entrada;
         total > 5 && enableButton(total);
         document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00`;
     } else {
         disableButtons();
-        transicao(palavra, entrada);
     }
 }
