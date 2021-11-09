@@ -21,7 +21,6 @@ const matriz = [
     [-1, 9,9,9, 12,22,32]
 ]
 
-//console.log("Resultado",transicao(palavra));
 function main(entrada) {
     palavra = [...palavra,entrada];
     calcTotal(entrada);
@@ -33,38 +32,39 @@ function transicao(palavra) {
     let estado = estadoInicial;
     palavra.map(simbolo => {
         let position = !isNaN(simbolo)? parseInt(simbolo) : convertToNumber(simbolo);
-        //console.log(`Position: ${position}`);
-        //console.log(`Simbolo: ${simbolo}`);
         estado = (position === 5 && !isNaN(simbolo))? matriz[estado][3] : matriz[estado][position];
-        //console.log(`matriz [${estado}][${position}]  = ${estado}`);
     });
-    //console.log(`Estado: ${estado}`)
     return estado;
 }
 
 function enableButton(total) {
     if (total >= 6 && !buttonsActive.find(e => e == "A")) {
         document.getElementById("btnA").disabled = false;
+        document.getElementById("btnA").style.cursor = "pointer";
         buttonsActive.push("A");
     } 
     if (total >= 7 && !buttonsActive.find(e => e == "B")) {
         document.getElementById("btnB").disabled = false;
+        document.getElementById("btnB").style.cursor = "pointer";
         buttonsActive.push("B");
     }
     if (total >= 8 && !buttonsActive.find(e => e == "C")) {
         document.getElementById("btnC").disabled = false;
+        document.getElementById("btnC").style.cursor = "pointer";
         buttonsActive.push("C");
     }
 }
 
 function disableButtons(){
-    document.getElementById("btnA").disabled = true;
-    document.getElementById("btnB").disabled = true;
-    document.getElementById("btnC").disabled = true;
-    // bloqueia money
-    document.getElementById("cash1").disabled = true;
-    document.getElementById("cash2").disabled = true;
-    document.getElementById("cash5").disabled = true;
+    document.getElementById("btnA").style.display = "none";
+    document.getElementById("btnB").style.display = "none";
+    document.getElementById("btnC").style.display = "none";
+    // disable money
+    document.getElementById("cash1").style.display = "none";
+    document.getElementById("cash2").style.display = "none";
+    document.getElementById("cash5").style.display = "none";
+    // enable refresh
+    document.getElementById("refresh-view").style.display = "flex";
 }
 
 function convertToNumber(position){
@@ -97,7 +97,6 @@ function convertToCandy(numberCandy){
 
 function calcTroco(resultEstado, total){
     let candy = convertToCandy(resultEstado);
-    console.log(candy)
     switch (candy){
         case ('A'):
             troco = total - 6;
@@ -111,18 +110,57 @@ function calcTroco(resultEstado, total){
         default:
             console.log('err!')
         }
+    
+    document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00<br>DOCE ${candy}: R$ -${total-troco},00`;
+    document.getElementById("total").style.backgroundColor = `#FFFF52`;
     document.getElementById("troco").innerHTML = `TROCO: R$ ${troco},00`;
-    document.getElementById("troco").style.backgroundColor = `rgb(152, 243, 116)`;
+    document.getElementById("troco").style.backgroundColor = `#228B22`;
+    document.getElementById("troco").style.color = `#F9F9F9`;
     document.getElementById("candy").innerHTML = `${candy}`;
-    document.getElementById("candy").style.backgroundColor = `rgb(152, 243, 116)`;
+    document.getElementById("candy").style.backgroundColor = candy == 'A' ? "#12CEFA" : candy == 'B' ? "#FFA500" : "#DDA0DD";
 }
 
 function calcTotal(entrada){
     if (!isNaN(entrada)) {
         total += entrada;
         total > 5 && enableButton(total);
-        document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00`;
+        document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00<br>&nbsp;`;
     } else {
         disableButtons();
     }
+}
+
+function clean(){
+    entrada = "";
+    palavra = [];
+    estadoInicial = 0;
+    resultEstado = -1;
+    total = 0;
+    troco = 0;
+    buttonsActive = [];
+
+    document.getElementById("total").innerHTML = `TOTAL: R$ 0,00<br>&nbsp;`;
+    document.getElementById("total").style.backgroundColor = `#F9F9F9`;
+    document.getElementById("troco").innerHTML = `TROCO: R$ 0,00`;
+    document.getElementById("troco").style.backgroundColor = `#F9F9F9`;
+    document.getElementById("troco").style.color = `#000`;
+    document.getElementById("candy").innerHTML = ``;
+    document.getElementById("candy").style.backgroundColor = "#F9F9F9";
+
+    document.getElementById("btnA").disabled = true;
+    document.getElementById("btnA").style.display = "";
+    document.getElementById("btnA").style.cursor = "auto";
+    document.getElementById("btnB").disabled = true;
+    document.getElementById("btnB").style.display = "";
+    document.getElementById("btnB").style.cursor = "auto";
+    document.getElementById("btnC").disabled = true;
+    document.getElementById("btnC").style.display = "";
+    document.getElementById("btnC").style.cursor = "auto";
+
+    // disable money
+    document.getElementById("cash1").style.display = "";
+    document.getElementById("cash2").style.display = "";
+    document.getElementById("cash5").style.display = "";
+    // enable refresh
+    document.getElementById("refresh-view").style.display = "none";
 }

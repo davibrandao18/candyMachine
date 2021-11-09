@@ -37,8 +37,8 @@ table, th {
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
@@ -86,7 +86,7 @@ table, th {
     width: 75px;
     height: 75px;
     border-radius: 50px;
-    background-color: purple;
+    background-color: #F9F9F9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,11 +101,13 @@ table, th {
 }
 
 .value {
-    padding: 20px;
+    padding: 15px;
     margin: 0;
     background-color:#F9F9F9;
-    text-align: center;
+    text-align: left;
     border-radius: 6px;
+    line-height: 22px;
+    font-size: 16px;
 }
 
 .cash {
@@ -115,10 +117,9 @@ table, th {
     font-size: 18px;
     border-radius: 6px;
     border: none;
+    cursor: pointer;
 }
-.cash:disabled{
-    background-color:#a6bda6;
-}
+
 .cash:active {
     background-color:#a6bda6;
 }
@@ -156,4 +157,20 @@ table, th {
 
 .button-c:active {
     background-color:#E8BFD8;
+}
+
+.refresh-view {
+    width: 175px;
+    height: 250px;
+    display: none;
+    justify-content: center;
+}
+
+.refresh {
+    width: 75px;
+    height: 75px;
+    border-radius: 50px;
+    border: none;
+    background-color: #978efe;
+    cursor: pointer;
 }
