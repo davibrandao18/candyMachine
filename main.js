@@ -60,12 +60,22 @@ function enableButton(total) {
 
 function disableButtons(){
     document.getElementById("btnA").style.backgroundColor="#0D5F00";
+    document.getElementById("btnDentadura").style.cursor = "auto";
     document.getElementById("btnB").style.backgroundColor="#0D5F00";
+    document.getElementById("btnMms").style.cursor = "auto";
     document.getElementById("btnC").style.backgroundColor="#0D5F00";
+    document.getElementById("btnAmora").style.cursor = "auto";
     // disable money
+    // disable money
+    document.getElementById("money1").disabled = true;
     document.getElementById("money1").style.backgroundColor="#0D5F00";
+    document.getElementById("money1").style.cursor = "auto";
+    document.getElementById("money2").disabled = true;
     document.getElementById("money2").style.backgroundColor="#0D5F00";
+    document.getElementById("money2").style.cursor = "auto";
+    document.getElementById("money3").disabled = true;
     document.getElementById("money3").style.backgroundColor="#0D5F00";
+    document.getElementById("money3").style.cursor = "auto";
     // enable refresh
     //document.getElementById("refresh-view").style.display = "flex";
 }
@@ -149,21 +159,6 @@ function clean(){
     document.getElementById("troco").style.color = `#000`;
     document.getElementById("candy").innerHTML = ``;
     document.getElementById("candy").style.backgroundColor = "#F9F9F9";
-
-    document.getElementById("btnA").disabled = true;
-    document.getElementById("btnA").style.display = "";
-    document.getElementById("btnA").style.cursor = "auto";
-    document.getElementById("btnB").disabled = true;
-    document.getElementById("btnB").style.display = "";
-    document.getElementById("btnB").style.cursor = "auto";
-    document.getElementById("btnC").disabled = true;
-    document.getElementById("btnC").style.display = "";
-    document.getElementById("btnC").style.cursor = "auto";
-
-    // disable money
-    document.getElementById("cash1").style.display = "";
-    document.getElementById("cash2").style.display = "";
-    document.getElementById("cash5").style.display = "";
     // enable refresh
     document.getElementById("refresh-view").style.display = "none";
 }
