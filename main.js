@@ -39,18 +39,21 @@ function transicao(palavra) {
 
 function enableButton(total) {
     if (total >= 6 && !buttonsActive.find(e => e == "A")) {
-        document.getElementById("btnA").disabled = false;
-        document.getElementById("btnA").style.cursor = "pointer";
+        document.getElementById("btnDentadura").disabled = false;
+        document.getElementById("btnDentadura").style.cursor = "pointer";
+        document.getElementById("btnA").style.backgroundColor= "#47A83E";
         buttonsActive.push("A");
     } 
     if (total >= 7 && !buttonsActive.find(e => e == "B")) {
-        document.getElementById("btnB").disabled = false;
-        document.getElementById("btnB").style.cursor = "pointer";
+        document.getElementById("btnMms").disabled = false;
+        document.getElementById("btnMms").style.cursor = "pointer";
+        document.getElementById("btnB").style.backgroundColor= "#47A83E";
         buttonsActive.push("B");
     }
     if (total >= 8 && !buttonsActive.find(e => e == "C")) {
         document.getElementById("btnAmora").disabled = false;
         document.getElementById("btnAmora").style.cursor = "pointer";
+        document.getElementById("btnC").style.backgroundColor= "#47A83E";
         buttonsActive.push("C");
     }
 }
