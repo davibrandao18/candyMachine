@@ -49,8 +49,8 @@ function enableButton(total) {
         buttonsActive.push("B");
     }
     if (total >= 8 && !buttonsActive.find(e => e == "C")) {
-        document.getElementById("btnC").disabled = false;
-        document.getElementById("btnC").style.cursor = "pointer";
+        document.getElementById("btnAmora").disabled = false;
+        document.getElementById("btnAmora").style.cursor = "pointer";
         buttonsActive.push("C");
     }
 }
