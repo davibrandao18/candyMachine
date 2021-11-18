@@ -59,15 +59,15 @@ function enableButton(total) {
 }
 
 function disableButtons(){
-    document.getElementById("btnA").style.display = "none";
-    document.getElementById("btnB").style.display = "none";
-    document.getElementById("btnC").style.display = "none";
+    document.getElementById("btnA").style.backgroundColor="#0D5F00";
+    document.getElementById("btnB").style.backgroundColor="#0D5F00";
+    document.getElementById("btnC").style.backgroundColor="#0D5F00";
     // disable money
-    document.getElementById("cash1").style.display = "none";
-    document.getElementById("cash2").style.display = "none";
-    document.getElementById("cash5").style.display = "none";
+    document.getElementById("money1").style.backgroundColor="#0D5F00";
+    document.getElementById("money2").style.backgroundColor="#0D5F00";
+    document.getElementById("money3").style.backgroundColor="#0D5F00";
     // enable refresh
-    document.getElementById("refresh-view").style.display = "flex";
+    //document.getElementById("refresh-view").style.display = "flex";
 }
 
 function convertToNumber(position){
