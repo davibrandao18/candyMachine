@@ -26,9 +26,7 @@ table, th {
     background-color: #EE4343;
     border: 8px solid #2E2842;
     display: flex;
-    /* display: flex;
-    justify-content: space-evenly;
-    font-family: Arial, Helvetica, sans-serif; */
+    font-family: Noto Sans, sans-serif;
 }
 
 .feet {
@@ -68,18 +66,6 @@ table, th {
     width: 140px;
 }
 
-/* .candy-a {
-    background-color: #12CEFA;
-}
-
-.candy-b {
-    background-color: #FFA500;
-}
-
-.candy-c {
-    background-color: #DDA0DD;
-} */
-
 .candies-out {
     background-color: #2E2842;
     border-radius: 4.5px;
@@ -95,16 +81,6 @@ table, th {
     display: none;
 }
 
-/* .candy-final {
-    width: 75px;
-    height: 75px;
-    border-radius: 50px;
-    background-color: #F9F9F9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .right {
     width: 48%;
     height: 100%;
@@ -115,10 +91,15 @@ table, th {
 }
 
 .painel {
+    padding-left: 8px;
     background-color: #2E2842;
     height: 470px;
     width: 180px;
     border-radius: 4.5px 0px 0px 4.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .logo {
@@ -134,77 +115,95 @@ table, th {
     height: 135px;
 }
 
-/* .value {
-    padding: 15px;
-    margin: 0;
-    background-color:#F9F9F9;
-    text-align: left;
-    border-radius: 6px;
-    line-height: 22px;
-    font-size: 16px;
-}
-
-.cash {
-    padding: 20px;
-    background-color:#228B22;
-    color: #F9F9F9;
+.screen {
+    background-color: #EFEFEF;
+    width: 150px;
+    height: 110px;
+    border-radius: 4.5px;
+    border: 8px solid #827F9D;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     font-size: 18px;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
 }
 
-.cash:active {
-    background-color:#a6bda6;
+.screen p {
+    margin-left: 10px;
+    text-align: justify;
 }
 
-.options {
+.cash-back {
+    width: 166px;
+    height: 36px;
     display: flex;
-    justify-content: space-between;
-}
-
-.options button {
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 35px;
-}
-
-.name {
-    height: 160px;
-    color: #F9F9F9;
-    margin: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    font-size: 42px;
     text-align: center;
 }
 
-.button-a:active {
-    background-color: #A9D7FD;
+.cash-back img {
+    width: 82px;
+    height: 42px;
 }
 
-.button-b:active {
-    background-color: #FABF53;
-}
-
-.button-c:active {
-    background-color:#E8BFD8;
-}
-
-.refresh-view {
-    width: 175px;
-    height: 250px;
+.with-money {
     display: none;
-    justify-content: center;
 }
 
-.refresh {
-    width: 75px;
-    height: 75px;
-    border-radius: 50px;
+.cash-back p {
+    color: #383152;
+    font-weight: bold;
+    margin: 0;
+}
+
+.value {
+    margin: 0;
+}
+
+.options {
+    background-color: #C6BFDD;
+    width: 166px;
+    height: 250px;
+    border-radius: 4.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.button-candy {
+    width: 125px;
+    height: 35px;
+    padding: 0 10px;
+    background-color: #2E2842;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-candy div {
+    width: 15px;
+    height: 15px;
+    background-color: #0D5F00;
+    border-radius: 20px;
+}
+
+.candy-option {
     border: none;
-    background-color: #978efe;
+    color: #F9F9F9;
+    background-color: #2E2842;
+    padding: 0;
+}
+
+.money {
+    border: none;
     cursor: pointer;
-} */
+    margin: 0;
+    height: 25px;
+    width: 85px;
+    background-color: #47A83E;
+    color: #F9F9F9;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

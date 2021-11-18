@@ -26,25 +26,37 @@
         </div>
         <div class="right">
             <div class="painel">
-
+                <div class="screen">
+                    <p id="total" class="value">Total: R$ 0,00</p>
+                    <p id="valor" class="value">Valor: R$ 0,00</p>
+                    <p id="troco" class="value">Troco: R$ 0,00</p>
+                </div>
+                <div class="cash-back">
+                    <p>Retire seu troco</p>
+                    <img class="without-money" src="./img/Cash Back.png" alt="Saída do dinheiro">
+                    <img class="with-money" src="./img/Cash Back Money.png" alt="Saída do dinheiro">
+                </div>
+                <div class="options">
+                    <div class="button-candy">
+                        <button id="btnDentadura" class="candy-option" onclick="main('A')" disabled>Fini: Dentadura</button>
+                        <div></div>
+                    </div>
+                    <div class="button-candy">
+                        <button id="btnMms" class="candy-option" onclick="main('B')" disabled>M&M's</button>
+                        <div></div>
+                    </div>
+                    <div class="button-candy">
+                        <button id="btnAmora" class="candy-option" onclick="main('C')" disabled>Fini: Amora</button>
+                        <div></div>
+                    </div>
+                    <button class="money" onclick="main(1)">+ R$ 1,00</button>
+                    <button class="money" onclick="main(2)">+ R$ 2,00</button>
+                    <button class="money" onclick="main(5)">+ R$ 5,00</button>
+                </div>
             </div>
             <div class="logo">
                 <img src="./img/Candy Machine.png" alt="Candy Machine">
             </div>
-            <!-- <p id="total" class="value">TOTAL: R$ 0,00<br>&nbsp;</p>
-            <p id="troco" class="value">TROCO: R$ 0,00</p>
-            <button id="cash1" class="cash" onclick="main(1)">R$ 1,00</button>
-            <button id="cash2" class="cash" onclick="main(2)">R$ 2,00</button>
-            <button id="cash5" class="cash" onclick="main(5)">R$ 5,00</button>
-            <div class="options">
-                <button id="btnA" class="candy-a button-a" onclick="main('A')" disabled>A</button>
-                <button id="btnB" class="candy-b button-b" onclick="main('B')" disabled>B</button>
-                <button id="btnC" class="candy-c button-c" onclick="main('C')" disabled>C</button>
-            </div>
-            <div id="refresh-view" class="refresh-view">
-                <button class="refresh" onclick="clean()"><img src="./img/refresh.png" alt="refresh" width="40px" height="40px"></button>
-            </div>
-            <p class="name">Candy<br>Machine</p> -->
         </div>
     </div>
     <div class="feet">

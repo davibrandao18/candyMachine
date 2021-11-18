@@ -111,9 +111,9 @@ function calcTroco(resultEstado, total){
             console.log('err!')
         }
     
-    document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00<br>DOCE ${candy}: R$ -${total-troco},00`;
+    document.getElementById("total").innerHTML = `Total: R$ ${total},00<br>DOCE ${candy}: R$ -${total-troco},00`;
     document.getElementById("total").style.backgroundColor = `#FFFF52`;
-    document.getElementById("troco").innerHTML = `TROCO: R$ ${troco},00`;
+    document.getElementById("troco").innerHTML = `Troco: R$ ${troco},00`;
     document.getElementById("troco").style.backgroundColor = `#228B22`;
     document.getElementById("troco").style.color = `#F9F9F9`;
     document.getElementById("candy").innerHTML = `${candy}`;
@@ -124,7 +124,7 @@ function calcTotal(entrada){
     if (!isNaN(entrada)) {
         total += entrada;
         total > 5 && enableButton(total);
-        document.getElementById("total").innerHTML = `TOTAL: R$ ${total},00<br>&nbsp;`;
+        document.getElementById("total").innerHTML = `Total: R$ ${total},00`;
     } else {
         disableButtons();
     }
@@ -139,9 +139,9 @@ function clean(){
     troco = 0;
     buttonsActive = [];
 
-    document.getElementById("total").innerHTML = `TOTAL: R$ 0,00<br>&nbsp;`;
+    document.getElementById("total").innerHTML = `Total: R$ 0,00`;
     document.getElementById("total").style.backgroundColor = `#F9F9F9`;
-    document.getElementById("troco").innerHTML = `TROCO: R$ 0,00`;
+    document.getElementById("troco").innerHTML = `Troco: R$ 0,00`;
     document.getElementById("troco").style.backgroundColor = `#F9F9F9`;
     document.getElementById("troco").style.color = `#000`;
     document.getElementById("candy").innerHTML = ``;
