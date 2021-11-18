@@ -124,13 +124,11 @@ function calcTroco(resultEstado, total){
             console.log('err!')
         }
     
-    document.getElementById("total").innerHTML = `Total: R$ ${total},00<br>DOCE ${candy}: R$ -${total-troco},00`;
-    document.getElementById("total").style.backgroundColor = `#FFFF52`;
+    document.getElementById("total").innerHTML = `Total: R$ ${total},00`;
+    document.getElementById("valor").innerHTML = `Valor: - R$ ${total-troco},00`;
     document.getElementById("troco").innerHTML = `Troco: R$ ${troco},00`;
-    document.getElementById("troco").style.backgroundColor = `#228B22`;
-    document.getElementById("troco").style.color = `#F9F9F9`;
-    document.getElementById("candy").innerHTML = `${candy}`;
-    document.getElementById("candy").style.backgroundColor = candy == 'A' ? "#12CEFA" : candy == 'B' ? "#FFA500" : "#DDA0DD";
+    //document.getElementById("candy").innerHTML = `${candy}`;
+    //document.getElementById("candy").style.backgroundColor = candy == 'A' ? "#12CEFA" : candy == 'B' ? "#FFA500" : "#DDA0DD";
 }
 
 function calcTotal(entrada){
