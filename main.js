@@ -66,7 +66,6 @@ function disableButtons(){
     document.getElementById("btnC").style.backgroundColor="#0D5F00";
     document.getElementById("btnAmora").style.cursor = "auto";
     // disable money
-    // disable money
     document.getElementById("money1").disabled = true;
     document.getElementById("money1").style.backgroundColor="#0D5F00";
     document.getElementById("money1").style.cursor = "auto";
@@ -127,8 +126,12 @@ function calcTroco(resultEstado, total){
     document.getElementById("total").innerHTML = `Total: R$ ${total},00`;
     document.getElementById("valor").innerHTML = `Valor: - R$ ${total-troco},00`;
     document.getElementById("troco").innerHTML = `Troco: R$ ${troco},00`;
-    //document.getElementById("candy").innerHTML = `${candy}`;
-    //document.getElementById("candy").style.backgroundColor = candy == 'A' ? "#12CEFA" : candy == 'B' ? "#FFA500" : "#DDA0DD";
+    document.getElementById("cash-back-money").style.color = "#827F9D";
+    document.getElementById("without-money").style.display = "none";
+    document.getElementById("with-money").style.width = "82px";
+
+    let id = candy == 'A' ? "dentadura" : candy == 'B' ? "mms" : "amora";
+    document.getElementById(id).style.width = "90px";
 }
 
 function calcTotal(entrada){
