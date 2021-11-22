@@ -77,7 +77,13 @@ table, th {
 }
 
 .candies-out img {
-    width: 0px;
+    display: none;
+    width: 90px;
+}
+
+.candies-out button{
+    background-color: #2E2842;
+    border: none;
 }
 
 .right {
@@ -139,13 +145,15 @@ table, th {
     text-align: center;
 }
 
-.without-money {
+#without-money {
     width: 82px;
     height: 42px;
 }
 
-.with-money {
-    width: 0px;
+
+#with-money {
+    display: none;
+    width: 82px;
     height: 42px;
 }
 

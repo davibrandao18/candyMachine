@@ -6,6 +6,7 @@ let estadoInicial = 0;
 let resultEstado =-1;
 let total = 0;
 let troco = 0;
+let id = "";
 let buttonsActive = [];
 
 const matriz = [
@@ -75,8 +76,6 @@ function disableButtons(){
     document.getElementById("money3").disabled = true;
     document.getElementById("money3").style.backgroundColor="#0D5F00";
     document.getElementById("money3").style.cursor = "auto";
-    // enable refresh
-    //document.getElementById("refresh-view").style.display = "flex";
 }
 
 function convertToNumber(position){
@@ -127,11 +126,13 @@ function calcTroco(resultEstado, total){
     document.getElementById("valor").innerHTML = `Valor: - R$ ${total-troco},00`;
     document.getElementById("troco").innerHTML = `Troco: R$ ${troco},00`;
     document.getElementById("cash-back-money").style.color = "#827F9D";
+    document.getElementById("with-money").style.display = "block";
     document.getElementById("without-money").style.display = "none";
-    document.getElementById("with-money").style.width = "82px";
 
-    let id = candy == 'A' ? "dentadura" : candy == 'B' ? "mms" : "amora";
-    document.getElementById(id).style.width = "90px";
+    id = candy == 'A' ? "dentadura" : candy == 'B' ? "mms" : "amora";
+    document.getElementById(id).style.display = "block";
+    document.getElementById("candies-out-btn").style.cursor = "pointer";
+    document.getElementById("candies-out-btn").disabled = false;
 }
 
 function calcTotal(entrada){
@@ -154,12 +155,23 @@ function clean(){
     buttonsActive = [];
 
     document.getElementById("total").innerHTML = `Total: R$ 0,00`;
-    document.getElementById("total").style.backgroundColor = `#F9F9F9`;
+    document.getElementById("valor").innerHTML = `Valor: R$ 0,00`;
     document.getElementById("troco").innerHTML = `Troco: R$ 0,00`;
-    document.getElementById("troco").style.backgroundColor = `#F9F9F9`;
-    document.getElementById("troco").style.color = `#000`;
-    document.getElementById("candy").innerHTML = ``;
-    document.getElementById("candy").style.backgroundColor = "#F9F9F9";
-    // enable refresh
-    document.getElementById("refresh-view").style.display = "none";
+    // disable money
+    document.getElementById("money1").disabled = false;
+    document.getElementById("money1").style.backgroundColor="#47A83E";
+    document.getElementById("money1").style.cursor = "pointer";
+    document.getElementById("money2").disabled = false;
+    document.getElementById("money2").style.backgroundColor="#47A83E";
+    document.getElementById("money2").style.cursor = "pointer";
+    document.getElementById("money3").disabled = false;
+    document.getElementById("money3").style.backgroundColor="#47A83E";
+    document.getElementById("money3").style.cursor = "pointer";
+    //Retire seu troco
+    document.getElementById("with-money").style.display = "none";
+    document.getElementById("without-money").style.display = "block";
+    document.getElementById("cash-back-money").style.color = "#383152";
+    //Candy out
+    document.getElementById(id).style.display = "none";
+    id = "";
 }
